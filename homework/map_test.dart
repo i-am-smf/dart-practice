@@ -201,26 +201,26 @@ void main() {
         "Employee ID : $id \nName : $name \nage : $age \nSalary : $sal \nProfile Picture Link : $profile \n");
   }
 
-  var under5L = []; 
-  var above5L = [];
+  var under3L = []; 
+  var above3L = [];
 
   for (var emp in allEmp) {
     var sal = emp['employee_salary'];
   
     if (sal > 300000) {
-      above5L.add(emp);
+      above3L.add(emp);
     } else {
-      under5L.add(emp);
+      under3L.add(emp);
     }
   }
   
   print("Employees under 3 lak salary . . . "); // display the employee who are having salary under 3 lakhs 
-  for (var emp1 in under5L) {
+  for (var emp1 in under3L) {
     showEmp(emp1);
   }
 
   print("Employees above 3 lak salary . . . "); // display the employee who are having salary above 3 lakhs 
-  for (var emp1 in under5L) {
+  for (var emp1 in under3L) {
     showEmp(emp1);
   }
 
