@@ -173,18 +173,24 @@ void main() {
     ],
     "message": "Successfully! All records has been fetched."
   };
+
   // for (var data in employee.values) {
   //   print(data);
   // }
+  
   var statusCode = employee['status'];
+  print("Status Code : $statusCode");
+
   dynamic allEmp = employee['data'];
   var message = employee['message'];
-  // print(all_emp.runtimeType);
+  print("Message : $message");
+  print(allEmp.runtimeType);
 
   // for (var emp in allEmp) {
   //   print(emp);
   // }
 
+  // this function is for display the employee's data in structured format
   showEmp(emp) {
     var id = emp['id'];
     var name = emp['employee_name'];
@@ -195,32 +201,43 @@ void main() {
         "Employee ID : $id \nName : $name \nage : $age \nSalary : $sal \nProfile Picture Link : $profile \n");
   }
 
-  var under5L = [];
+  var under5L = []; 
   var above5L = [];
+
   for (var emp in allEmp) {
-    // var id = emp['id'];
-    // var name = emp['employee_name'];
     var sal = emp['employee_salary'];
-    // var age = emp['employee_age'];
-    // var profile = emp['profile_image'];
-    // print(sal);
-
-    // print(
-    //     "Employee ID : $id \nName : $name \nage : $age \nSalary : $sal \nProfile Picture Link : $profile \n");
-
+  
     if (sal > 300000) {
       above5L.add(emp);
     } else {
       under5L.add(emp);
     }
   }
-  print("Employees under 3 lak salary . . . ");
+  
+  print("Employees under 3 lak salary . . . "); // display the employee who are having salary under 3 lakhs 
   for (var emp1 in under5L) {
     showEmp(emp1);
   }
 
-  var newEmp = {};
-  newEmp['id'] = 100 ;
-  newEmp['employee_name'] = "Shaik Mohamed Fahad";
+  print("Employees above 3 lak salary . . . "); // display the employee who are having salary above 3 lakhs 
+  for (var emp1 in under5L) {
+    showEmp(emp1);
+  }
 
+  Map<String,Object> newEmp = {}; // creating a map with string and object data type
+  // ⚠️⚠️⚠️ doubt: why we have to declare the map type as string and object, I face error without declaring the datatype 
+  // Error: _TypeError (type '_Map<dynamic, dynamic>' is not a subtype of type 'Map<String, Object>' of 'value')
+
+  newEmp['id'] = 100;
+  newEmp['employee_name'] = "Shaik Mohamed Fahad";
+  newEmp['employee_salary'] = 751000;
+  newEmp['employee_age'] = 21;
+  newEmp['profile_image'] ="";
+
+  print(newEmp);
+  
+  allEmp.add(newEmp); // inserting the new employee data in all data list <List>
+  employee['data'] = allEmp; // update the list data in emplyee details <Map>
+  
+  print(employee);
 }
