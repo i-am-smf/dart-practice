@@ -220,7 +220,7 @@ void main() {
   }
 
   print("Employees above 3 lak salary . . . "); // display the employee who are having salary above 3 lakhs 
-  for (var emp1 in under3L) {
+  for (var emp1 in above3L) {
     showEmp(emp1);
   }
 
