@@ -1,4 +1,5 @@
 void main() {
+  // Give employee Data
   var employee = {
     "status": "success",
     "data": [
@@ -177,14 +178,15 @@ void main() {
   // for (var data in employee.values) {
   //   print(data);
   // }
-  
+
   var statusCode = employee['status'];
   print("Status Code : $statusCode");
 
   dynamic allEmp = employee['data'];
   var message = employee['message'];
+
   print("Message : $message");
-  print(allEmp.runtimeType);
+  print(allEmp.runtimeType); // to check the type of object <List>
 
   // for (var emp in allEmp) {
   //   print(emp);
@@ -201,43 +203,46 @@ void main() {
         "Employee ID : $id \nName : $name \nage : $age \nSalary : $sal \nProfile Picture Link : $profile \n");
   }
 
-  var under3L = []; 
+  var under3L = [];
   var above3L = [];
 
   for (var emp in allEmp) {
     var sal = emp['employee_salary'];
-  
+
     if (sal > 300000) {
       above3L.add(emp);
     } else {
       under3L.add(emp);
     }
   }
-  
-  print("Employees under 3 lak salary . . . "); // display the employee who are having salary under 3 lakhs 
+
+  print(
+      "Employees under 3 lak salary . . . "); // display the employee who are having salary under 3 lakhs
   for (var emp1 in under3L) {
     showEmp(emp1);
   }
 
-  print("Employees above 3 lak salary . . . "); // display the employee who are having salary above 3 lakhs 
+  print(
+      "Employees above 3 lak salary . . . "); // display the employee who are having salary above 3 lakhs
   for (var emp1 in above3L) {
     showEmp(emp1);
   }
 
-  Map<String,Object> newEmp = {}; // creating a map with string and object data type
-  // ⚠️⚠️⚠️ doubt: why we have to declare the map type as string and object, I face error without declaring the datatype 
+  Map<String, Object> newEmp =
+      {}; // creating a map with string and object data type
+  // ⚠️⚠️⚠️ doubt: why we have to declare the map type as string and object, I face error without declaring the datatype
   // Error: _TypeError (type '_Map<dynamic, dynamic>' is not a subtype of type 'Map<String, Object>' of 'value')
 
   newEmp['id'] = 100;
   newEmp['employee_name'] = "Shaik Mohamed Fahad";
   newEmp['employee_salary'] = 751000;
   newEmp['employee_age'] = 21;
-  newEmp['profile_image'] ="";
+  newEmp['profile_image'] = "";
 
   print(newEmp);
-  
-  allEmp.add(newEmp); // inserting the new employee data in all data list <List>
+
+  allEmp.add(newEmp); // inserting the new employee data in all data list <List>; The above error appears in the line
   employee['data'] = allEmp; // update the list data in emplyee details <Map>
-  
-  print(employee);
+
+  print(employee); // print the entire data to ensure the new employee data is added
 }
