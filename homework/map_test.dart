@@ -232,7 +232,7 @@ void main() {
       {}; // creating a map with string and object data type
   // ⚠️⚠️⚠️ doubt: why we have to declare the map type as string and object, I face error without declaring the datatype
   // Error: _TypeError (type '_Map<dynamic, dynamic>' is not a subtype of type 'Map<String, Object>' of 'value')
-
+  
   newEmp['id'] = 100;
   newEmp['employee_name'] = "Shaik Mohamed Fahad";
   newEmp['employee_salary'] = 751000;
