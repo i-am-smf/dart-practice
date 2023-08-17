@@ -1,5 +1,5 @@
 void main() {
-  // Give employee Data
+  // Given employee Data
   var employee = {
     "status": "success",
     "data": [
@@ -205,7 +205,8 @@ void main() {
 
   var under3L = [];
   var above3L = [];
-
+  
+  // for some test operation, I divide the employee details into two category based on their salary
   for (var emp in allEmp) {
     var sal = emp['employee_salary'];
 
